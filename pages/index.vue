@@ -1,5 +1,5 @@
 <template>
-  <Tutorial/>
+  <my-todo />
 </template>
 
 <script lang="ts">
@@ -9,3 +9,10 @@ export default Vue.extend({
   name: 'IndexPage'
 })
 </script>
+
+<style>
+.body {
+  width: 320px;
+  margin: 0;
+}
+</style>

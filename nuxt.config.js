@@ -1,4 +1,6 @@
 export default {
+  srcDir: '.',
+
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
 
@@ -9,17 +11,20 @@ export default {
   head: {
     title: 'nuxt2-first-app',
     htmlAttrs: {
-      lang: 'en'
+      lang: 'ja'
     },
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { name: 'viewport', content: 'target-densitydpi=device-dpi, width=320, user-scalable=no' },
       { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+    ],
+    bodyAttrs: {
+      class: 'body'
+    }
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
