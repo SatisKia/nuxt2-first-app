@@ -5,7 +5,7 @@
         <tbody>
           <tr>
             <td class="td" style="width:5%">
-              <input type="checkbox" value="todo.done" v-on:change="done" />
+              <input type="checkbox" v-bind:checked="todo.done" v-on:change="done" />
             </td>
             <td class="td" style="width:20%">
               <span>{{ date }}</span>
@@ -35,23 +35,47 @@ export default Vue.extend({
     }
   },
   methods: {
-    done () {
+    done: function () {
       if (this.$props.todo) {
         this.$emit('done', this.$props.todo.id)
       }
     },
-    remove () {
+    remove: function () {
       if (this.$props.todo) {
         this.$emit('remove', this.$props.todo.id)
       }
     }
   },
   computed: {
-    date (): string {
+    date: function (): string {
       if (!this.$props.todo) return ''
       const { date } = this.$props.todo
       return '' + date.getFullYear() + '年' + (date.getMonth() + 1) + '月' + date.getDate() + '日'
     }
+  },
+  beforeCreate: function () {
+    console.log('TodoLabel beforeCreate')
+  },
+  created: function () {
+    console.log('TodoLabel created')
+  },
+  beforeMount: function () {
+    console.log('TodoLabel beforeMount')
+  },
+  mounted: async function () {
+    console.log('TodoLabel mounted')
+  },
+  beforeUpdate: function () {
+    console.log('TodoLabel beforeUpdate')
+  },
+  updated: function () {
+    console.log('TodoLabel updated')
+  },
+  beforeDestroy: function () {
+    console.log('TodoLabel beforeDestroy')
+  },
+  destroyed: function () {
+    console.log('TodoLabel destroyed')
   }
 })
 </script>
